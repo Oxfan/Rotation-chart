@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>轮播图</title>
+    <style>
+        .oxfan-hide {
+            display: none;
+        }
+        .oxfan-menu-content {
+            height: 100px;
+            border: 1px solid red;
+        }
+        .oxfan-item {
+            filter: grayscale(100%);
+        }
+        .oxfan-item.oxfan-highlight {
+            filter: initial;
+        }
+        .oxfan-item.oxfan-highlight img {
+            width: 150px;
+            height: 150px;
+        }
+        img {
+            transition: width 1s, height 1s;
+        }
+        .oxfan-item img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .oxfan-slide {
+            position: relative;
+            width: 800px;
+        }
+        .oxfan-slide-image {
+            display: none;
+        }
+        .oxfan-active {
+            display: inline-block;
+        }
+        .oxfan-slide-button {
+            right: 0;
+            width: 30px;
+            height: 50px;
+            border: 0;
+            color: #fff;
+            opacity: 0.3;
+            background: #000;
+            outline: none;
+        }
+        .oxfan-slide-button:hover {
+            cursor: pointer;
+        }
+        .oxfan-slide-button.oxfan-left {
+            left: 0;
+        }
+        .oxfan-slide-button.oxfan-right {
+            right: 0;
+        }
+        .oxfan-vertical-center {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .oxfan-slide-indicators {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 10px;
+            text-align: center;
+        }
+        .oxfan-slide-indi {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: red;
+        }
+        .oxfan-white {
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="oxfan-slide" data-imgs="3" data-active="0">
+        <img id="id-oxfanimage-0" class="oxfan-slide-image oxfan-active" src="./img/1.jpg" alt="">
+        <img id="id-oxfanimage-1" class="oxfan-slide-image" src="./img/2.jpg" alt="">
+        <img id="id-oxfanimage-2" class="oxfan-slide-image" src="./img/3.jpg" alt="">
+        <button class="oxfan-slide-button oxfan-left oxfan-vertical-center" data-offset="-1">&lt;</button>
+        <button class="oxfan-slide-button oxfan-right oxfan-vertical-center" data-offset="1">&gt;</button>
+        <div class="oxfan-slide-indicators">
+            <div id="id-indicator-0" data-index="0" class="oxfan-slide-indi oxfan-white"></div>
+            <div id="id-indicator-1" data-index="1" class="oxfan-slide-indi"></div>
+            <div id="id-indicator-2" data-index="2" class="oxfan-slide-indi"></div>
+        </div>
+    </div>
+    <script src="./player.js"></script>
+</body>
+</html>
